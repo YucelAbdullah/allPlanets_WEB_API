@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Planets>
+
+@{
+    ViewData["Title"] = "allPlanets";
+}
+
+
+<h1 class="text-center m-3">Güneş Sisteminde Bulunan Gezegenler</h1>
+
+
+<div class="row row-cols-1 row-cols-md-3">
+
+    @foreach (var planet in Model)
+    {
+        <div class=" col d-flex ">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="@planet.imgSrc.First().img" class="card-img-top" alt="Planet">
+                <div class="card-body">
+                    <h5 class="card-title">@planet.name</h5>
+                    <p class="card-text">@planet.description</p>
+                    <a href="@planet.wikiLink" class="btn btn-primary mt-auto">Detaylı İnceleme</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
